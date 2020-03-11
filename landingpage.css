@@ -1,0 +1,215 @@
+/** {
+	border: 1px solid black;
+}*/
+
+:root {
+	--div-bg-color: hsl(202, 40%, 77%);
+	--div-border: 2px solid hsl(202, 40%, 77%);
+	--div-border-radius: 20px;
+	--div-margin: 20px;
+	--bg-color: hsl(202, 40%, 57%);
+}
+
+body {
+	background-color: var(--bg-color);
+	margin: 0;
+	font-family: "Yatra One";
+	text-align: center;
+	color: hsl(202, 40%, 27%);
+}
+
+header {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: white;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+}
+
+main {
+	padding-top: 100px;
+}
+
+#logo {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+
+#header-img {
+	width: 80px;
+	height: 60px;
+}
+
+h1 {
+	width: 240px;
+}
+
+nav {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+
+nav a {
+	width: 150px;
+	text-align: center;
+	padding-top: 3.5%;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+nav a:hover {
+	animation-name: navlink-hover;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+a {
+	color: hsl(202, 40%, 37%);
+}
+
+a:visited {
+	color: hsl(202, 40%, 37%);
+}
+
+a:hover {
+	color: white;
+}
+
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+
+section {
+	padding: 20px;
+	position: relative;
+}
+
+#intro {
+	flex: 1;
+	border: var(--div-border);
+	border-radius: var(--div-border-radius);
+	background-color: var(--div-bg-color);
+	margin: var(--div-margin);
+	width: 50%;
+
+}
+
+#video-container {
+	flex: 1;
+	border: var(--div-border);
+	border-radius: var(--div-border-radius);
+	background-color: var(--div-bg-color);
+	margin: var(--div-margin)
+}
+
+
+#sellers {
+	flex: 1;
+	display: flex;
+
+}
+
+#sellers div {
+	flex-basis: 30%;
+	border: var(--div-border);
+	border-radius: var(--div-border-radius);
+	background-color: var(--div-bg-color);
+	margin: var(--div-margin)
+}
+
+.seller-logo {
+	height: 25px;
+	max-width: 200px;
+}
+
+#mailing {
+	flex: 1;
+	border: var(--div-border);
+	border-radius: var(--div-border-radius);
+	background-color: var(--div-bg-color);
+	margin: var(--div-margin)
+}
+
+hr {
+	border: 0;
+	height: 1px; 
+	width: 90%;
+	background-image: linear-gradient(to right, rgba(166, 204, 227, 0), rgba(166, 204, 227, 0.75), rgba(166, 204, 227, 0));
+}
+
+
+/*sellers divs next to each other from screens over 900px*/
+@media (min-width: 900px) {
+	#sellers {
+		display: flex;
+		justify-content: space-around;
+		align-items: stretch;
+	}
+}
+
+/*nav splits into two by two*/
+@media (max-width: 1250px) {
+	nav {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	nav a {
+		flex-basis: 49%;
+	}
+}
+
+/*header splits in half, logo over nav-links, video shrinks in size*/
+@media (max-width: 600px) {
+
+	#logo {
+		flex-basis: 100%;
+	}
+
+	nav {
+		flex-basis: 100%;
+	}
+
+	iframe {
+		width: 280px;
+		height: 160px;
+	}
+}
+
+/*changes background color*/
+@keyframes navlink-hover {
+	100% {
+		background-color: var(--bg-color);
+	}
+}
+
+
+/*offset anchors on the page - to fix the navbar issue!*/
+#one {
+	position: absolute;
+	top:-120px;
+}
+
+#two {
+	position: absolute;
+	top:-120px;
+}
+
+#three {
+	position: absolute;
+	top:-120px;
+}
+
+#four {
+	position: absolute;
+	top:-120px;
+}
